@@ -1,0 +1,20 @@
+Analyze this etrog for kashrut compliance and fill out this JSON template with your assessment:
+
+{
+  "black_dots": [YOUR_SCORE],(How many black dots are there in each third of the etrog (top, bottom and middleHow many black dots are there in each third of the etrog (top, bottom and middle, maybe none at all))?)
+  "shape_score": [SHAPE_ASSESSMENT_0_TO_100],
+  "surface_score": [SURFACE_QUALITY_0_TO_100],
+  "color_score": [COLOR_APPROPRIATENESS_0_TO_100],
+  "pitom_score": [TIP_CONDITION_0_TO_100],
+  "defects": "[DESCRIBE_ANY_DEFECTS_OR_NONE]",
+  "recommendation": "[kosher/questionable/not_kosher/expert_review]",
+  "confidence": [YOUR_CONFIDENCE_0_TO_100],
+  "notes": "[ADDITIONAL_OBSERVATIONS]"
+}
+
+Replace all bracketed placeholders with your actual assessment values. Return only the completed JSON, no other text.
+
+
+
+
+
