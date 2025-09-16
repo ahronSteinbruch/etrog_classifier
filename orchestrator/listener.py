@@ -4,8 +4,9 @@ import threading
 from mongo import MongoLoad
 from kafka_pub import Produce
 from kafka_sub import Subscriber
+from contextlib import asynccontextmanager
+import json
 
-app = FastAPI(title="Etrog Classifier API")
 mongo = MongoLoad('etrog_db','etrogim')
 kafka_publish = Produce()
 
@@ -27,35 +28,47 @@ def kafka_consumer():
             for message in kafka_subscribe.consumer:
                 if consumer_running:
                     mongo.update(message.value['_id'],message.value['status'],message.value['response'])
+                    print(f'Etrog with id:{message.value['_id']} updated')
                 else:
                     break
         except Exception as e:
             print(f'error:{e}')
         finally:
             kafka_subscribe.close()
+            print('Consumer closed')
             consumer_running = False
 
     consumer_thread = threading.Thread(target=consume_results, daemon=True)
     consumer_thread.start()
 
+
 def stop_consumer():
     global consumer_running
     consumer_running = False
 
-@app.on_event('start-up')
-async def startup_event():
-    kafka_consumer()
 
-@app.on_event('shut-down')
-async def shutdown_event():
+@asynccontextmanager
+async def lifespan(app : FastAPI):
+    kafka_consumer()
+    print('Consumer Starting')
+
+    yield
+
     stop_consumer()
     mongo.close()
     kafka_publish.close()
+    print('All shutting down')
+
+
+
+app = FastAPI(title="Etrog Classifier API",lifespan=lifespan)
+
 
 
 @app.post('/input')
 async def input_pic(input_dict):
     try:
+        input_dict = json.loads(input_dict)
         record_id = mongo.etrog_initialise(input_dict)
         if record_id:
             publish = kafka_publish.publish_message('etrogim_to_process',{'_id':record_id,'picture':input_dict['pic']})

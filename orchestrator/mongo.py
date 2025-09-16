@@ -1,3 +1,5 @@
+import json
+
 import pymongo
 import uuid
 
@@ -10,7 +12,7 @@ class MongoLoad:
             print('All connected to mongoDB')
         except Exception as e:
             self.mongodb = None
-            print(f'error:{e}')
+            print(f'error__init__:{e}')
 
 
     def etrog_initialise(self,initial_dic):
@@ -24,7 +26,7 @@ class MongoLoad:
                 print('Added initial record to mongoDB')
                 return dic['_id']
             except Exception as e:
-                print(f'error:{e}')
+                print(f'error_etrog_initialise:{e}')
                 return None
         else:
             print('Not connected to DB')
@@ -42,7 +44,7 @@ class MongoLoad:
                     print('ID not found')
                     return {'error': 'ID not found'}
             except Exception as e:
-                print(f'error:{e}')
+                print(f'error_get_answer:{e}')
                 return {'error': str(e)}
         else:
             print('Database not available')
@@ -57,7 +59,7 @@ class MongoLoad:
                 print('Record updated')
                 return True
             except Exception as e:
-                print(f'error:{e}')
+                print(f'error_update:{e}')
                 return False
         else:
             print('Database not available')
