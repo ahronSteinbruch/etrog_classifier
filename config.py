@@ -13,6 +13,6 @@ class Config:
     """
     def __init__(self):
         self.BASE_URL = os.getenv("ETROG_B_BASE_URL", "http://localhost:8000")
-        self.PATH_TEMPLATE = os.getenv("ETROG_B_STATUS_PATH", "/etrog/status/{id}")
+        self.PATH_TEMPLATE = os.getenv("ETROG_B_STATUS_PATH", "/answer/{id}")
         self.DB_PATH = os.getenv("ETROG_SQLITE_PATH", "etrog_grades.db")
         self.VALID_GRADES = {"A", "B", "C", "D", "E"}
