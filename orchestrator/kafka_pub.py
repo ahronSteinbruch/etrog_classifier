@@ -4,6 +4,7 @@ import json
 class Produce:
     def __init__(self):
         try:
+            # Kafka publisher
             self.producer = KafkaProducer(
                         bootstrap_servers=["localhost:9092"],
                         value_serializer=lambda x: json.dumps(x).encode('utf-8'))
@@ -13,6 +14,9 @@ class Produce:
             self.producer = None
 
     def publish_message(self,topic, message):
+        # Published message:
+        # receives topic:str , message: dict
+        # returns bool
         if self.producer:
             try:
                 self.producer.send(topic, message)
@@ -27,6 +31,7 @@ class Produce:
             return False
 
     def close(self):
+        # Closes publisher
         if self.producer:
             self.producer.close()
             print('Producer closed')

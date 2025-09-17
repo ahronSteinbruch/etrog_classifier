@@ -6,6 +6,8 @@ import uuid
 class MongoLoad:
     def __init__(self,db,collection):
         try:
+            # Connect to mongo
+            # Receives db:str, collection:str
             self.mongodb = pymongo.MongoClient("mongodb://localhost:27017")
             self.db = self.mongodb[db]
             self.collection = self.db[collection]
@@ -18,6 +20,9 @@ class MongoLoad:
     def etrog_initialise(self,initial_dic):
         if self.mongodb:
             try:
+                # Create document
+                # Receives initial_dic: dict (pic,variety)
+                # Returns id:str (None if issued)
                 dic = initial_dic
                 dic['_id'] = str(uuid.uuid4())
                 dic['status'] = 'in-progress'
@@ -34,6 +39,9 @@ class MongoLoad:
 
     def get_answer(self,id):
         if self.mongodb:
+            # Response when ready
+            # Receives id:str
+            # Returns dictionary of status and response (or error)
             try:
                 record = self.collection.find_one({'_id':id})
                 if record:
@@ -53,6 +61,9 @@ class MongoLoad:
 
     def update(self,id,status,quality):
         if self.mongodb:
+            # Updates document
+            # Receives id:str, status:str, quality:str
+            # Returns bool
             try:
                 new_value = {'$set': {'status':status,'response':quality}}
                 self.collection.update_one({'_id': id}, new_value)
@@ -67,6 +78,7 @@ class MongoLoad:
 
     def close(self):
         if self.mongodb:
+            # Closes connection
             self.mongodb.close()
             print('Mongo closed')
 
