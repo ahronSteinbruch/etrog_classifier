@@ -13,7 +13,6 @@ class ClientToSql:
         cfg (Config): Loaded configuration.
         base_url (str): Service base URL from config.
         path_template (str): URL path template appended as-is (no ID formatting here).
-        timeout_s (int): Maximum total wait time in seconds before giving up.
         db_path (str): SQLite database file path.
         valid_grades (set[str]): Allowed grades.
     """
@@ -32,7 +31,7 @@ class ClientToSql:
             - Builds URL as: base_url.rstrip('/') + path_template.
             - Sends repeated GET requests with the job_id in the request body.
             - Expects JSON like: {"status": "done", "response": "A"}.
-            - Sleeps 100 seconds between attempts; no timeout is enforced here.
+            - Sleeps 0.1 seconds between attempts.
 
         Args:
             job_id (str): Server-issued job identifier.
