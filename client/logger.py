@@ -7,8 +7,8 @@ import config
 class Logger:
     _logger = None
     @classmethod
-    def get_logger(cls, name=config.LOGGER_NAME, es_host=config.ES_HOST,
-                   index="my_index_logs_name", level=logging.DEBUG):
+    def get_logger(cls, name=config.LOGGER_NAME
+                   , level=logging.DEBUG):
         if cls._logger:
             return cls._logger
         logger = logging.getLogger(name)
