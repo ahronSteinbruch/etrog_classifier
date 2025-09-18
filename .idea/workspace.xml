@@ -4,11 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4d4bf6b-9094-4fe9-bef7-0a522824b2fe" name="Changes" comment="" />
+    <list default="true" id="f4d4bf6b-9094-4fe9-bef7-0a522824b2fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/beckend/imageValidator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/beckend/imageloader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/beckend/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/beckend/uploader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/ui/creating_example_table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/ui/data_display.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/ui/etrog_grades.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/ui/main_ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/open_ai/kafka_pub.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/open_ai/kafka_sub.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/open_ai/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/open_ai/model_open_ai.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/logger/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client_to_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/beckend/fetcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/beckend/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal_sqlite.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/beckend/dal_sqlite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka_consumer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loger/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/beckend/printer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loger/console_logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loger/file_logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loger/logger_base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loger/mongo_logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loger/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/open_ai/prompt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/open_ai/prompt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open_ai/test_lmstudio_chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/open_ai/test_lmstudio_chat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator/kafka_pub.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/orchestrator/kafka_pub.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator/kafka_sub.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/orchestrator/kafka_sub.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator/listener.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/orchestrator/listener.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator/mongo.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/orchestrator/mongo.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,15 +72,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dh-client-prouser&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/Kodcod&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/user/PycharmProjects/etrogClassifier/server/open_ai"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\etrogClassifier\server\open_ai" />
+      <recent name="C:\Users\user\PycharmProjects\etrogClassifier\client\ui" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\etrogClassifier\server" />
+      <recent name="C:\Users\user\PycharmProjects\etrogClassifier\utils" />
+      <recent name="C:\Users\user\PycharmProjects\etrogClassifier\client\beckend" />
+      <recent name="C:\Users\user\PycharmProjects\etrogClassifier\client" />
       <recent name="C:\Users\user\PycharmProjects\etrogClassifier" />
     </key>
   </component>
@@ -154,5 +202,15 @@
       <updated>1757839393105</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/client/ui/main_ui.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

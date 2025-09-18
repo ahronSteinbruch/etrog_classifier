@@ -1,0 +1,13 @@
+Analyze this etrog for kashrut compliance and fill out this JSON template with your assessment A/B/C/D/E A is the best grade and D is the worst grade:
+
+{
+  "recommendation": "[A/B/C/D/E]",
+  "confidence": [YOUR_CONFIDENCE_0_TO_100],
+}
+
+Replace all bracketed placeholders with your actual assessment values. Return only the completed JSON, no other text.
+
+
+
+
+

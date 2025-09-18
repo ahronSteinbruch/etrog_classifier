@@ -58,9 +58,9 @@ def test_lmstudio_vision():
         print("Testing image processing with LM Studio...")
         print("Image: image.png")
         print("-" * 50)
-
+        image_path = ""
         # Encode the image
-        base64_image = encode_image("‏‏etrog - עותק.png")
+        base64_image = encode_image(image_path)
 
         completion = client.chat.completions.create(
             model="google/gemma-3-27b",

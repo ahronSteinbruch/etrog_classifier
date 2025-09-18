@@ -1,4 +1,4 @@
-from config import Config
+from client.beckend.config import Config
 import sqlite3
 
 

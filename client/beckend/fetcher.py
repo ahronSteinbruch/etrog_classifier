@@ -1,10 +1,10 @@
 from __future__ import annotations
 import time
 import requests
-from config import Config
+from client.beckend.config import Config
 
 
-class ClientToSql:
+class Fetcher:
     """
     Client that polls the Etrog-B status API until a job is done, validates the
     returned grade, and persists per-variety grade counts into a local SQLite DB.
@@ -18,11 +18,9 @@ class ClientToSql:
         valid_grades (set[str]): Allowed grades.
     """
     def __init__(self):
-        self.cfg = Config()
-        self.base_url = self.cfg.BASE_URL
-        self.path_template = self.cfg.PATH_TEMPLATE
-
-        self.valid_grades = self.cfg.VALID_GRADES
+        self.base_url = Config.BASE_URL
+        self.path_template = Config.PATH_TEMPLATE
+        self.valid_grades = Config.VALID_GRADES
 
     def poll_until_status_done(self, job_id) -> str:
         """

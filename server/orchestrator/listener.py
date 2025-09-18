@@ -21,7 +21,7 @@ def kafka_consumer():
         return
 
     def consume_results():
-        kafka_subscribe = Subscriber('etrog_finished')
+        kafka_subscribe = Subscriber('response')
         consumer_running = True
 
         try:
@@ -71,7 +71,7 @@ async def input_pic(input_dict):
         input_dict = json.loads(input_dict)
         record_id = mongo.etrog_initialise(input_dict)
         if record_id:
-            publish = kafka_publish.publish_message('etrogim_to_process',{'_id':record_id,'picture':input_dict['pic']})
+            publish = kafka_publish.publish_message('jobs',{'_id':record_id,'picture':input_dict['pic']})
             if not publish:
                 mongo.update(record_id,'failed','Failed to queue for processing')
         else:
